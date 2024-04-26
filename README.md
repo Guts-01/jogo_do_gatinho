@@ -1,1 +1,3 @@
 # jogo_do_gatinho
+
+jogo feito para celular somente, versao de pc sairá em breve....
