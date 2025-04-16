@@ -6,8 +6,7 @@ Este é um pequeno jogo desenvolvido com foco em responsividade, utilizando apen
 
 - Layout responsivo para **dispositivos móveis** e **desktops**.
 - Animações de obstáculos e nuvens.
-- Botões de controle para iniciar ou resetar o jogo.
-- Modal de fim de jogo personalizável.
+- Botões de controle para saber como joga ou resetar o jogo.
 
 ## 📱 Responsividade
 
@@ -21,4 +20,3 @@ O layout foi desenvolvido com **mobile first**, utilizando media queries para ad
 - HTML5
 - CSS3 (incluindo animações com `@keyframes` e `@media` queries)
 
-## 📁 Estrutura
