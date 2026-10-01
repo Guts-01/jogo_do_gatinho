@@ -1,50 +1,82 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5ee" />
+    <meta name="description" content="Ajude o gatinho a saltar as poças e marque pontos." />
+    <title>Jogo do Gatinho</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <div>
+          <h1 id="game-title">Jogo do Gatinho <span aria-hidden="true">🐾</span></h1>
+          <p class="intro">Pule as poças e veja quantos pontos consegue fazer.</p>
+        </div>
+        <button class="button button-quiet" id="help-button" type="button">Como jogar</button>
+      </header>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo do gatinho</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+      <section class="game-card" aria-label="Partida do Jogo do Gatinho">
+        <dl class="scoreboard" aria-label="Placar da partida">
+          <div class="scoreboard-item">
+            <dt>Pontos</dt>
+            <dd><output id="score">0</output></dd>
+          </div>
+          <div class="scoreboard-item">
+            <dt>Tempo</dt>
+            <dd><output id="timer">00:00</output></dd>
+          </div>
+        </dl>
 
-<body>
-    <header class="pontuacao_jogo">
-        <p class="pontuacao_texto">Pontos</p>
-        <p class="pontuacao_numero" id="pontuacao_numero">0</p>
-        <p class="pontuacao_texto">Tempo</p>
-        <div id="tempo_numero" class="tempo_numeroDisplay tempo_numero">00</div>
-    </header>
-    <main>
-        <section class="tela_jogo">
-            <img src="imagens/cloud.png" alt="" class="cloud">
-            <img src="imagens/cloud.png" alt="" class="cloud2">
-            <img src="imagens/cloud.png" alt="" class="cloud3">
-            <div class="obstaculos">
-                <img src="imagens/buracoComAgua.gif" alt="" class="agua">
-                <div class="terra"></div>
-            </div>
-            <img src="imagens/gato.gif" alt="gatinho_correndo" class="cat">
+        <div
+          class="game-area"
+          id="game-area"
+          role="button"
+          tabindex="0"
+          aria-label="Área do jogo. Começar partida"
+          aria-describedby="controls-hint"
+        >
+          <div class="sun" aria-hidden="true"></div>
+          <img class="cloud cloud-one" src="imagens/cloud.png" alt="" aria-hidden="true" />
+          <img class="cloud cloud-two" src="imagens/cloud.png" alt="" aria-hidden="true" />
+          <img class="cloud cloud-three" src="imagens/cloud.png" alt="" aria-hidden="true" />
+          <div class="hill hill-back" aria-hidden="true"></div>
+          <div class="hill hill-front" aria-hidden="true"></div>
+          <img class="cat" id="cat" src="imagens/gato.gif" alt="" aria-hidden="true" />
+          <div class="puddle" id="puddle" aria-hidden="true"></div>
+          <div class="ground" aria-hidden="true"></div>
+          <div class="game-overlay" id="game-overlay" aria-hidden="true">
+            <span class="overlay-icon" id="overlay-icon">🐱</span>
+            <strong id="overlay-title">Pronto para brincar?</strong>
+            <span id="overlay-detail">Toque na pista ou pressione Começar.</span>
+          </div>
+        </div>
 
-        </section>
-        <section class="botoes_jogo">
-
-            <button onclick="ResetarJogo()" id="reset">Reiniciar</button>
-            <button id="comoJogar">Como jogar</button>
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>Como Funciona o Jogo</h2>
-                    <p>Para pular, toque em qualquer lugar na tela</p>
-                    <p>Ao encostar no fogo, o gatinho se queima e vc perde.</p>
-                    <p>O objetivo é fazer o maximo de pontos possiveis em menos tempo.</p>
-                </div>
-            </div>
-
-        </section>
+        <div class="game-controls" role="group" aria-label="Controles do jogo">
+          <button class="button button-primary" id="start-button" type="button">Começar</button>
+          <button class="button button-jump" id="jump-button" type="button" disabled>Pular <span aria-hidden="true">↑</span></button>
+          <button class="button button-secondary" id="pause-button" type="button" hidden>Pausar</button>
+        </div>
+        <p class="controls-hint" id="controls-hint">No teclado, use Espaço ou ↑ para pular. No celular, toque na pista ou em Pular.</p>
+        <p class="sr-only" id="game-status" role="status" aria-live="polite">Pronto para jogar.</p>
+      </section>
     </main>
 
-    <script src="script.js"></script>
-</body>
-
+    <dialog class="help-dialog" id="help-dialog" aria-labelledby="help-title">
+      <div class="dialog-heading">
+        <h2 id="help-title">Como jogar</h2>
+        <button class="dialog-close" id="close-help" type="button" aria-label="Fechar instruções">×</button>
+      </div>
+      <p>Ajude o gatinho a saltar cada poça. Você ganha um ponto quando passa por uma poça sem encostar nela.</p>
+      <ul>
+        <li><strong>Celular e tablet:</strong> toque na pista ou no botão Pular.</li>
+        <li><strong>Computador:</strong> pressione Espaço ou a seta para cima. Você também pode clicar na pista.</li>
+        <li>Use Pausar para interromper a partida. O jogo também pausa quando você muda de aba.</li>
+      </ul>
+      <button class="button button-primary dialog-action" id="got-it-button" type="button">Entendi</button>
+    </dialog>
+  </body>
 </html>

@@ -1,22 +1,20 @@
-# 🐱 Jogo Responsivo com HTML e CSS
+# Jogo do Gatinho 🐱
 
-Este é um pequeno jogo desenvolvido com foco em responsividade, utilizando apenas **HTML** e **CSS**. Ele apresenta elementos animados como nuvens, obstáculos e um personagem (um gato) que pula para evitar colisões.
+Um jogo de reflexos feito com HTML, CSS e JavaScript, sem dependências. Pule as poças para marcar pontos; a partida termina se o gatinho encostar em uma delas.
 
-## 🎮 Funcionalidades
+## Como jogar
 
-- Layout responsivo para **dispositivos móveis** e **desktops**.
-- Animações de obstáculos e nuvens.
-- Botões de controle para saber como joga ou resetar o jogo.
+Abra `index.html` no navegador e pressione **Começar**. Use **Espaço** ou **↑** no teclado, clique na pista ou toque nela para pular. O botão **Pular** funciona em qualquer tamanho de tela. Use **Pausar** para interromper a partida e **Reiniciar** para começar de novo.
 
-## 📱 Responsividade
+O jogo também pausa quando a aba fica oculta. O placar aumenta quando uma poça passa pelo gatinho, e o tempo mostra a duração da partida.
 
-O layout foi desenvolvido com **mobile first**, utilizando media queries para adaptar a interface a diferentes tamanhos de tela:
+Três nuvens atravessam a pista no sentido contrário ao do gatinho, com velocidades e intervalos variados. Com a preferência de movimento reduzido ativada, elas permanecem paradas.
 
-- **Telas menores que 430px**: elementos otimizados para smartphones.
-- **Telas maiores**: layout adaptado com mais espaçamento, tamanhos maiores e centralização.
+## Estrutura
 
-## 💻 Tecnologias
+- `index.html`: estrutura semântica, controles e instruções acessíveis.
+- `style.css`: apresentação responsiva e cena do jogo.
+- `script.js`: estados da partida, movimento, colisão, placar e controles.
+- `imagens/`: sprites originais do gatinho e das nuvens.
 
-- HTML5
-- CSS3 (incluindo animações com `@keyframes` e `@media` queries)
-
+Não é necessário instalar pacotes nem executar um servidor.
